@@ -1,0 +1,354 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta> <reloc>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$build/bin/dio.o
+cinit CODE 0 A3A A3A E 1 2
+text0 CODE 0 A00 A00 3A 1 2
+text1 CODE 0 8EC 8EC AE 1 2
+text2 CODE 0 99A 99A 66 1 2
+text3 CODE 0 822 822 CA 1 2
+cstackCOMRAM COMRAM 1 1 1 9 1 1
+smallconst SMALLCONST 0 800 800 22 1 2
+config CONFIG 4 300000 300000 8 1 1
+$build/bin/startup.o
+init CODE 0 7FFC 7FFC 4 1 2
+reset_vec CODE 0 0 0 4 1 2
+config CONFIG 4 300000 300000 8 1 1
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 60-7FF 1
+SFR F60-FFF 1
+BANK0 60-FF 1
+BANK1 100-1FF 1
+BANK2 200-2FF 1
+BANK3 300-3FF 1
+BANK4 400-4FF 1
+BANK5 500-5FF 1
+BANK6 600-6FF 1
+BANK7 700-7FF 1
+CONST 4-7FF 1
+CONST A48-7FFB 1
+IDLOC 200000-200007 1
+SMALLCONST A48-7FFB 1
+CODE 4-7FF 1
+CODE A48-7FFB 1
+BIGRAM A-7FF 1
+BIGSFR F60-FFF 1
+COMRAM A-5F 1
+CONFIG 300008-30000D 1
+EEDATA F00000-F000FF 1
+MEDIUMCONST A48-7FFB 1
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$build/bin/dio.o
+822 text3 CODE >4:/home/reyes/embedded/automotive/dio/src/dio.c
+822 text3 CODE >8:/home/reyes/embedded/automotive/dio/src/dio.c
+824 text3 CODE >10:/home/reyes/embedded/automotive/dio/src/dio.c
+84E text3 CODE >12:/home/reyes/embedded/automotive/dio/src/dio.c
+890 text3 CODE >13:/home/reyes/embedded/automotive/dio/src/dio.c
+894 text3 CODE >16:/home/reyes/embedded/automotive/dio/src/dio.c
+8D8 text3 CODE >18:/home/reyes/embedded/automotive/dio/src/dio.c
+8EA text3 CODE >19:/home/reyes/embedded/automotive/dio/src/dio.c
+99A text2 CODE >21:/home/reyes/embedded/automotive/dio/src/dio.c
+99C text2 CODE >23:/home/reyes/embedded/automotive/dio/src/dio.c
+9F6 text2 CODE >25:/home/reyes/embedded/automotive/dio/src/dio.c
+9FC text2 CODE >29:/home/reyes/embedded/automotive/dio/src/dio.c
+9FE text2 CODE >31:/home/reyes/embedded/automotive/dio/src/dio.c
+8EC text1 CODE >33:/home/reyes/embedded/automotive/dio/src/dio.c
+8EE text1 CODE >35:/home/reyes/embedded/automotive/dio/src/dio.c
+8FE text1 CODE >37:/home/reyes/embedded/automotive/dio/src/dio.c
+948 text1 CODE >38:/home/reyes/embedded/automotive/dio/src/dio.c
+94C text1 CODE >41:/home/reyes/embedded/automotive/dio/src/dio.c
+998 text1 CODE >43:/home/reyes/embedded/automotive/dio/src/dio.c
+A00 text0 CODE >5:/home/reyes/embedded/automotive/dio/main.c
+A00 text0 CODE >7:/home/reyes/embedded/automotive/dio/main.c
+A04 text0 CODE >8:/home/reyes/embedded/automotive/dio/main.c
+A04 text0 CODE >10:/home/reyes/embedded/automotive/dio/main.c
+A1A text0 CODE >12:/home/reyes/embedded/automotive/dio/main.c
+A24 text0 CODE >13:/home/reyes/embedded/automotive/dio/main.c
+A28 text0 CODE >16:/home/reyes/embedded/automotive/dio/main.c
+A3A cinit CODE >549:/home/reyes/embedded/automotive/dio/build/bin/dio.s
+A3A cinit CODE >551:/home/reyes/embedded/automotive/dio/build/bin/dio.s
+A3A cinit CODE >554:/home/reyes/embedded/automotive/dio/build/bin/dio.s
+A3A cinit CODE >560:/home/reyes/embedded/automotive/dio/build/bin/dio.s
+A3A cinit CODE >563:/home/reyes/embedded/automotive/dio/build/bin/dio.s
+A3C cinit CODE >564:/home/reyes/embedded/automotive/dio/build/bin/dio.s
+A3E cinit CODE >565:/home/reyes/embedded/automotive/dio/build/bin/dio.s
+A40 cinit CODE >566:/home/reyes/embedded/automotive/dio/build/bin/dio.s
+A42 cinit CODE >567:/home/reyes/embedded/automotive/dio/build/bin/dio.s
+A44 cinit CODE >568:/home/reyes/embedded/automotive/dio/build/bin/dio.s
+$build/bin/startup.o
+7FFC init CODE >102:/home/reyes/embedded/automotive/dio/build/bin/startup.s
+0 reset_vec CODE >66:/home/reyes/embedded/automotive/dio/build/bin/startup.s
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+__Lmediumconst 0 0 MEDIUMCONST 0 mediumconst build/bin/dio.o
+__Hspace_0 8000 0 ABS 0 - build/bin/dio.o
+__Hspace_1 A 0 ABS 0 - build/bin/dio.o
+__Hspace_2 0 0 ABS 0 - build/bin/dio.o
+__Hspace_4 600008 0 ABS 0 - build/bin/dio.o
+__Hibigdata 0 0 CODE 0 ibigdata build/bin/dio.o
+__mediumconst 800 0 SMALLCONST 0 smallconst build/bin/dio.o
+__Heeprom_data 0 0 EEDATA 0 eeprom_data build/bin/dio.o
+__L__absolute__ 0 0 ABS 0 __absolute__ build/bin/dio.o
+__Lsmallconst 800 0 SMALLCONST 0 smallconst build/bin/dio.o
+_LATB F8A 0 ABS 0 - build/bin/dio.o
+_LATC F8B 0 ABS 0 - build/bin/dio.o
+___sp 0 0 STACK 2 stack build/bin/startup.o
+_main A00 0 CODE 0 text0 build/bin/dio.o
+___stack_hi 0 0 STACK 2 stack build/bin/startup.o
+___stack_lo 0 0 STACK 2 stack build/bin/startup.o
+start 7FFC 0 CODE 0 init build/bin/startup.o
+__Hpowerup 0 0 CODE 0 powerup build/bin/dio.o
+_Dio_WriteChannel 8EC 0 CODE 0 text1 build/bin/dio.o
+Dio_WriteChannel@level 1 0 COMRAM 1 cstackCOMRAM build/bin/dio.o
+__accesstop 60 0 ABS 0 - build/bin/startup.o
+intlevel0 0 0 CODE 0 text build/bin/startup.o
+intlevel1 0 0 CODE 0 text build/bin/startup.o
+intlevel2 0 0 CODE 0 text build/bin/startup.o
+intlevel3 0 0 CODE 0 text build/bin/startup.o
+__LnvFARRAM 0 0 FARRAM 0 nvFARRAM build/bin/dio.o
+__Hifardata 0 0 CODE 0 ifardata build/bin/dio.o
+__Hclrtext 0 0 ABS 0 clrtext build/bin/dio.o
+___inthi_sp 0 0 STACK 2 stack build/bin/startup.o
+___intlo_sp 0 0 STACK 2 stack build/bin/startup.o
+__Hintcode_body 0 0 ABS 0 intcode_body build/bin/dio.o
+__Lintsave_regs 0 0 BIGRAM 1 intsave_regs build/bin/dio.o
+__Hmediumconst 0 0 MEDIUMCONST 0 mediumconst build/bin/dio.o
+__Hintcodelo 18 0 CODE 0 intcodelo build/bin/dio.o
+__end_of_Dio_ReadChannel A00 0 CODE 0 text2 build/bin/dio.o
+__end_of_Dio_WriteChannel 99A 0 CODE 0 text1 build/bin/dio.o
+__Lintcodelo 18 0 CODE 0 intcodelo build/bin/dio.o
+start_initialization A3A 0 CODE 0 cinit build/bin/dio.o
+__HnvFARRAM 0 0 FARRAM 0 nvFARRAM build/bin/dio.o
+___rparam_used 1 0 ABS 0 - build/bin/dio.o
+isa$xinst 0 0 ABS 0 - build/bin/startup.o
+_Dio_ReadChannel 99A 0 CODE 0 text2 build/bin/dio.o
+__Hbank0 0 0 ABS 0 bank0 build/bin/dio.o
+__Hbank1 0 0 ABS 0 bank1 build/bin/dio.o
+__Hbank2 0 0 ABS 0 bank2 build/bin/dio.o
+__Hbank3 0 0 ABS 0 bank3 build/bin/dio.o
+__Hbank4 0 0 ABS 0 bank4 build/bin/dio.o
+__Hbank5 0 0 ABS 0 bank5 build/bin/dio.o
+__Hbank6 0 0 ABS 0 bank6 build/bin/dio.o
+__Hbank7 0 0 ABS 0 bank7 build/bin/dio.o
+__Hcinit 0 0 ABS 0 cinit build/bin/dio.o
+__Hconst 0 0 CONST 0 const build/bin/dio.o
+__Hidata 0 0 CODE 0 idata build/bin/dio.o
+__Hidloc 0 0 ABS 0 idloc build/bin/dio.o
+__Hnvbit 0 0 COMRAM 1 nvbit build/bin/dio.o
+__Hparam 0 0 COMRAM 1 rparam build/bin/dio.o
+__Hrdata 0 0 COMRAM 1 rdata build/bin/dio.o
+__Hstack 0 0 STACK 2 stack build/bin/dio.o
+__Htext0 0 0 ABS 0 text0 build/bin/dio.o
+__Htext1 0 0 ABS 0 text1 build/bin/dio.o
+__Htext2 0 0 ABS 0 text2 build/bin/dio.o
+__Htext3 0 0 ABS 0 text3 build/bin/dio.o
+__Hbigbss 0 0 BIGRAM 1 bigbss build/bin/dio.o
+__Hbigram 0 0 ABS 0 bigram build/bin/dio.o
+__Hbigsfr 0 0 ABS 0 bigsfr build/bin/dio.o
+__smallconst 800 0 SMALLCONST 0 smallconst build/bin/dio.o
+__Hcomram 0 0 ABS 0 comram build/bin/dio.o
+__Hconfig 300008 0 CONFIG 4 config build/bin/dio.o
+__Lbank0 0 0 ABS 0 bank0 build/bin/dio.o
+__Lbank1 0 0 ABS 0 bank1 build/bin/dio.o
+__Lbank2 0 0 ABS 0 bank2 build/bin/dio.o
+__Lbank3 0 0 ABS 0 bank3 build/bin/dio.o
+__Lbank4 0 0 ABS 0 bank4 build/bin/dio.o
+__Lbank5 0 0 ABS 0 bank5 build/bin/dio.o
+__Lbank6 0 0 ABS 0 bank6 build/bin/dio.o
+__Lbank7 0 0 ABS 0 bank7 build/bin/dio.o
+__Lcinit 0 0 ABS 0 cinit build/bin/dio.o
+__Lconst 0 0 CONST 0 const build/bin/dio.o
+__Lidata 0 0 CODE 0 idata build/bin/dio.o
+__Lidloc 0 0 ABS 0 idloc build/bin/dio.o
+__Lnvbit 0 0 COMRAM 1 nvbit build/bin/dio.o
+__Lparam 0 0 COMRAM 1 rparam build/bin/dio.o
+__Lrdata 0 0 COMRAM 1 rdata build/bin/dio.o
+__Lstack 0 0 STACK 2 stack build/bin/dio.o
+__Ltext0 0 0 ABS 0 text0 build/bin/dio.o
+__Ltext1 0 0 ABS 0 text1 build/bin/dio.o
+__Ltext2 0 0 ABS 0 text2 build/bin/dio.o
+__Ltext3 0 0 ABS 0 text3 build/bin/dio.o
+__Hfarbss 0 0 FARRAM 0 farbss build/bin/dio.o
+__Lintcode_body 0 0 ABS 0 intcode_body build/bin/dio.o
+__Habs1 0 0 ABS 0 abs1 build/bin/dio.o
+__Hdata 0 0 ABS 0 data build/bin/dio.o
+__Hheap 0 0 HEAP 7 heap build/bin/dio.o
+__Hinit 8000 0 CODE 0 init build/bin/dio.o
+__Hrbit 0 0 COMRAM 1 rbit build/bin/dio.o
+__Hrbss 0 0 COMRAM 1 rbss build/bin/dio.o
+__Htemp 0 0 COMRAM 1 temp build/bin/dio.o
+__Htext 0 0 ABS 0 text build/bin/dio.o
+__Labs1 0 0 ABS 0 abs1 build/bin/dio.o
+__Ldata 0 0 ABS 0 data build/bin/dio.o
+__Lheap 0 0 HEAP 7 heap build/bin/dio.o
+__Linit 7FFC 0 CODE 0 init build/bin/dio.o
+__Lrbit 0 0 COMRAM 1 rbit build/bin/dio.o
+__Lrbss 0 0 COMRAM 1 rbss build/bin/dio.o
+__Ltemp 0 0 COMRAM 1 temp build/bin/dio.o
+__Ltext 0 0 ABS 0 text build/bin/dio.o
+__HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM build/bin/dio.o
+__Hintret 0 0 ABS 0 intret build/bin/dio.o
+__Hirdata 0 0 CODE 0 irdata build/bin/dio.o
+__S0 8000 0 ABS 0 - build/bin/dio.o
+__S1 A 0 ABS 0 - build/bin/dio.o
+__S4 0 0 ABS 0 - build/bin/dio.o
+__S5 0 0 ABS 0 - build/bin/dio.o
+__Lbigdata 0 0 BIGRAM 1 bigdata build/bin/dio.o
+__Hnvrram 0 0 COMRAM 1 nvrram build/bin/dio.o
+_Dio_Init 822 0 CODE 0 text3 build/bin/dio.o
+__Lintentry 0 0 ABS 0 intentry build/bin/dio.o
+__Hramtop 800 0 RAM 0 ramtop build/bin/dio.o
+__Hrparam 0 0 COMRAM 1 rparam build/bin/dio.o
+__end_of_Dio_Init 8EC 0 CODE 0 text3 build/bin/dio.o
+__activetblptr 1 0 ABS 0 - build/bin/dio.o
+__Hstruct 0 0 COMRAM 1 struct build/bin/dio.o
+__Lbigbss 0 0 BIGRAM 1 bigbss build/bin/dio.o
+__Lbigram 0 0 ABS 0 bigram build/bin/dio.o
+__Lbigsfr 0 0 ABS 0 bigsfr build/bin/dio.o
+__Lcomram 0 0 ABS 0 comram build/bin/dio.o
+__Lconfig 0 0 CONFIG 4 config build/bin/dio.o
+__end_of_Dio_ChannelConfig 821 0 SMALLCONST 0 smallconst build/bin/dio.o
+__Lsivt_hi 0 0 CODE 0 sivt_hi build/bin/dio.o
+__Lsivt_lo 18 0 CODE 0 sivt_lo build/bin/dio.o
+__Lfarbss 0 0 FARRAM 0 farbss build/bin/dio.o
+___inthi_stack_hi 0 0 STACK 2 stack build/bin/startup.o
+___inthi_stack_lo 0 0 STACK 2 stack build/bin/startup.o
+__Lfardata 0 0 FARRAM 0 fardata build/bin/dio.o
+isa$std 1 0 ABS 0 - build/bin/startup.o
+stackhi 0 0 ABS 0 - build/bin/startup.o
+stacklo 0 0 ABS 0 - build/bin/startup.o
+__Lintcode 8 0 CODE 0 intcode build/bin/dio.o
+__Lintret 0 0 ABS 0 intret build/bin/dio.o
+__Lirdata 0 0 CODE 0 irdata build/bin/dio.o
+__Lspace_0 0 0 ABS 0 - build/bin/dio.o
+__Lspace_1 0 0 ABS 0 - build/bin/dio.o
+__Lspace_2 0 0 ABS 0 - build/bin/dio.o
+__Lspace_4 0 0 ABS 0 - build/bin/dio.o
+__LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM build/bin/dio.o
+end_of_initialization A3A 0 CODE 0 cinit build/bin/dio.o
+__Lnvrram 0 0 COMRAM 1 nvrram build/bin/dio.o
+__Hintentry 0 0 ABS 0 intentry build/bin/dio.o
+__Hreset_vec 4 0 CODE 0 reset_vec build/bin/dio.o
+Dio_Init@i 7 0 COMRAM 1 cstackCOMRAM build/bin/dio.o
+__Lramtop 800 0 RAM 0 ramtop build/bin/dio.o
+__Lrparam 0 0 COMRAM 1 rparam build/bin/dio.o
+__pcinit A3A 0 CODE 0 cinit build/bin/dio.o
+__ptext0 A00 0 CODE 0 text0 build/bin/dio.o
+__ptext1 8EC 0 CODE 0 text1 build/bin/dio.o
+__ptext2 99A 0 CODE 0 text2 build/bin/dio.o
+__ptext3 822 0 CODE 0 text3 build/bin/dio.o
+__Lstruct 0 0 COMRAM 1 struct build/bin/dio.o
+__ramtop 800 0 RAM 0 ramtop build/bin/startup.o
+__Lpowerup 0 0 CODE 0 powerup build/bin/dio.o
+__Leeprom_data 0 0 EEDATA 0 eeprom_data build/bin/dio.o
+__H__absolute__ 0 0 ABS 0 __absolute__ build/bin/dio.o
+__psmallconst 800 0 SMALLCONST 0 smallconst build/bin/dio.o
+__Lreset_vec 0 0 CODE 0 reset_vec build/bin/dio.o
+_Dio_ChannelConfig 801 0 SMALLCONST 0 smallconst build/bin/dio.o
+___heap_hi 0 0 ABS 0 - build/bin/startup.o
+___heap_lo 0 0 ABS 0 - build/bin/startup.o
+___param_bank 0 0 ABS 0 - build/bin/dio.o
+___intlo_stack_hi 0 0 STACK 2 stack build/bin/startup.o
+___intlo_stack_lo 0 0 STACK 2 stack build/bin/startup.o
+__Hbigdata 0 0 BIGRAM 1 bigdata build/bin/dio.o
+__end_of__initialization A3A 0 CODE 0 cinit build/bin/dio.o
+__Libigdata 0 0 CODE 0 ibigdata build/bin/dio.o
+__Lclrtext 0 0 ABS 0 clrtext build/bin/dio.o
+Dio_ReadChannel@channelId 8 0 COMRAM 1 cstackCOMRAM build/bin/dio.o
+__pcstackCOMRAM 1 0 COMRAM 1 cstackCOMRAM build/bin/dio.o
+__end_of_main A3A 0 CODE 0 text0 build/bin/dio.o
+_PORTB F81 0 ABS 0 - build/bin/dio.o
+_PORTC F82 0 ABS 0 - build/bin/dio.o
+_TRISB F93 0 ABS 0 - build/bin/dio.o
+_TRISC F94 0 ABS 0 - build/bin/dio.o
+__HRAM 0 0 ABS 0 - build/bin/dio.o
+__Hbss 0 0 RAM 1 bss build/bin/dio.o
+__Hram 0 0 ABS 0 ram build/bin/dio.o
+__Hsfr 0 0 ABS 0 sfr build/bin/dio.o
+__LRAM 1 0 ABS 0 - build/bin/dio.o
+__Lbss 0 0 RAM 1 bss build/bin/dio.o
+__Lram 0 0 ABS 0 ram build/bin/dio.o
+__Lsfr 0 0 ABS 0 sfr build/bin/dio.o
+Dio_WriteChannel@channelId 9 0 COMRAM 1 cstackCOMRAM build/bin/dio.o
+__Hsivt_hi 0 0 CODE 0 sivt_hi build/bin/dio.o
+__Hsivt_lo 18 0 CODE 0 sivt_lo build/bin/dio.o
+__initialization A3A 0 CODE 0 cinit build/bin/dio.o
+__Hfardata 0 0 FARRAM 0 fardata build/bin/dio.o
+__Hsmallconst 822 0 SMALLCONST 0 smallconst build/bin/dio.o
+__Lifardata 0 0 CODE 0 ifardata build/bin/dio.o
+__Hintsave_regs 0 0 BIGRAM 1 intsave_regs build/bin/dio.o
+__Hintcode 8 0 CODE 0 intcode build/bin/dio.o
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+text3 0 822 822 226 1
+cstackCOMRAM 1 1 1 9 1
+init 0 7FFC 7FFC 4 1
+reset_vec 0 0 0 4 1
+smallconst 0 800 800 22 1
+# %NOTES Section
+# This section contains data of all the note-psects.  The beginning of the section
+# is indicated by %NOTES. The first line indicates the name and decimal
+# byte-length of the first note-psect, e.g.
+#   $codecov_info_hdr 16
+# Each line that follows contains the byte-data of the psect in hexadecimal as a
+# space-separated list. These lines are limited to 16 bytes of data.
+%NOTES

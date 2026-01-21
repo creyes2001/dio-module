@@ -1,0 +1,88 @@
+Version 4.0 HI-TECH Software Intermediate Code
+[p mainexit ]
+"27 inc/dio.h
+[v _Dio_Init `(v ~T0 @X0 0 ef ]
+"10 main.c
+[c E40 0 1 .. ]
+[n E40 . DIO_LEVEL_LOW DIO_LEVEL_HIGH  ]
+"28 inc/dio.h
+[v _Dio_ReadChannel `(E40 ~T0 @X0 0 ef1`uc ]
+"10 main.c
+[c E57 0 1 2 3 4 .. ]
+[n E57 . DIO_CH_DOOR_SWITCH DIO_CH_COURTESY_LAMP DIO_CH_TURN_SIGNAL_LAMP DIO_CH_HAZARD_LAMP DIO_CH_MAX  ]
+"29 inc/dio.h
+[v _Dio_WriteChannel `(v ~T0 @X0 0 ef2`uc`E40 ]
+"3 inc/config.h
+[p x PLLDIV  =  1        ]
+"4
+[p x CPUDIV  =  OSC1_PLL2  ]
+"5
+[p x USBDIV  =  1        ]
+"8
+[p x FOSC  =  HS         ]
+"9
+[p x FCMEN  =  OFF       ]
+"10
+[p x IESO  =  OFF        ]
+"13
+[p x PWRT  =  ON         ]
+"14
+[p x BOR  =  ON          ]
+"15
+[p x BORV  =  3          ]
+"18
+[p x WDT  =  OFF         ]
+"21
+[p x PBADEN  =  OFF      ]
+"22
+[p x LPT1OSC  =  OFF     ]
+"23
+[p x MCLRE  =  ON        ]
+"26
+[p x STVREN  =  ON       ]
+"27
+[p x LVP  =  OFF         ]
+"28
+[p x XINST  =  OFF       ]
+[v $root$_main `(v ~T0 @X0 0 e ]
+"5 main.c
+[v _main `(i ~T0 @X0 1 ef ]
+"6
+{
+[e :U _main ]
+[f ]
+"7
+[e ( _Dio_Init ..  ]
+"8
+[e :U 4 ]
+"9
+{
+"10
+[e $ ! == -> ( _Dio_ReadChannel (1 -> . `E57 0 `uc `ui -> . `E40 0 `ui 6  ]
+"11
+{
+"12
+[e ( _Dio_WriteChannel (2 , -> . `E57 1 `uc . `E40 1 ]
+"13
+}
+[e $U 7  ]
+"14
+[e :U 6 ]
+"15
+{
+"16
+[e ( _Dio_WriteChannel (2 , -> . `E57 1 `uc . `E40 0 ]
+"17
+}
+[e :U 7 ]
+"18
+}
+[e :U 3 ]
+[e $U 4  ]
+[e :U 5 ]
+"19
+[e ) -> 0 `i ]
+[e $UE 2  ]
+"20
+[e :UE 2 ]
+}

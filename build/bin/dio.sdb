@@ -1,0 +1,154 @@
+[p GLOBOPT AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F4550 ]
+[d frameptr 4065 ]
+"10 /home/reyes/embedded/automotive/dio/main.c
+[e E40 . `uc
+DIO_LEVEL_LOW 0
+DIO_LEVEL_HIGH 1
+]
+[e E57 . `uc
+DIO_CH_DOOR_SWITCH 0
+DIO_CH_COURTESY_LAMP 1
+DIO_CH_TURN_SIGNAL_LAMP 2
+DIO_CH_HAZARD_LAMP 3
+DIO_CH_MAX 4
+]
+"8 /home/reyes/embedded/automotive/dio/src/dio.c
+[e E57 . `uc
+DIO_CH_DOOR_SWITCH 0
+DIO_CH_COURTESY_LAMP 1
+DIO_CH_TURN_SIGNAL_LAMP 2
+DIO_CH_HAZARD_LAMP 3
+DIO_CH_MAX 4
+]
+"10
+[e E36 . `uc
+DIO_OUTPUT 0
+DIO_INPUT 1
+]
+"21
+[e E40 . `uc
+DIO_LEVEL_LOW 0
+DIO_LEVEL_HIGH 1
+]
+"6 /home/reyes/embedded/automotive/dio/src/dio_cfg.c
+[e E36 . `uc
+DIO_OUTPUT 0
+DIO_INPUT 1
+]
+"7 /opt/microchip/xc8/v3.10/pic/sources/c99/common/__lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"7 /opt/microchip/xc8/v3.10/pic/sources/c99/common/aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+"7 /opt/microchip/xc8/v3.10/pic/sources/c99/common/almod.c
+[v ___almod __almod `(l  1 e 4 0 ]
+"9 /opt/microchip/xc8/v3.10/pic/sources/c99/common/aodiv.c
+[v ___aodiv __aodiv `(o  1 e 8 0 ]
+"9 /opt/microchip/xc8/v3.10/pic/sources/c99/common/aomod.c
+[v ___aomod __aomod `(o  1 e 8 0 ]
+"7 /opt/microchip/xc8/v3.10/pic/sources/c99/common/atdiv.c
+[v ___atdiv __atdiv `(m  1 e 3 0 ]
+"7 /opt/microchip/xc8/v3.10/pic/sources/c99/common/atmod.c
+[v ___atmod __atmod `(m  1 e 3 0 ]
+"7 /opt/microchip/xc8/v3.10/pic/sources/c99/common/awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"7 /opt/microchip/xc8/v3.10/pic/sources/c99/common/awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"4 /opt/microchip/xc8/v3.10/pic/sources/c99/common/fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"62 /opt/microchip/xc8/v3.10/pic/sources/c99/common/float.c
+[v ___ftpack __ftpack `(f  1 e 4 0 ]
+"86 /opt/microchip/xc8/v3.10/pic/sources/c99/common/ftadd.c
+[v ___ftadd __ftadd `(f  1 e 4 0 ]
+"54 /opt/microchip/xc8/v3.10/pic/sources/c99/common/ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 4 0 ]
+"62 /opt/microchip/xc8/v3.10/pic/sources/c99/common/ftmul.c
+[v ___ftmul __ftmul `(f  1 e 4 0 ]
+"19 /opt/microchip/xc8/v3.10/pic/sources/c99/common/ftsub.c
+[v ___ftsub __ftsub `(f  1 e 4 0 ]
+"7 /opt/microchip/xc8/v3.10/pic/sources/c99/common/llmod.c
+[v ___llmod __llmod `(ul  1 e 4 0 ]
+"9 /opt/microchip/xc8/v3.10/pic/sources/c99/common/lodiv.c
+[v ___lodiv __lodiv `(uo  1 e 8 0 ]
+"9 /opt/microchip/xc8/v3.10/pic/sources/c99/common/lomod.c
+[v ___lomod __lomod `(uo  1 e 8 0 ]
+"7 /opt/microchip/xc8/v3.10/pic/sources/c99/common/ltdiv.c
+[v ___ltdiv __ltdiv `(um  1 e 3 0 ]
+"7 /opt/microchip/xc8/v3.10/pic/sources/c99/common/ltmod.c
+[v ___ltmod __ltmod `(um  1 e 3 0 ]
+"7 /opt/microchip/xc8/v3.10/pic/sources/c99/common/lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"7 /opt/microchip/xc8/v3.10/pic/sources/c99/common/lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"10 /opt/microchip/xc8/v3.10/pic/sources/c99/common/sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"11 /opt/microchip/xc8/v3.10/pic/sources/c99/common/sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 /opt/microchip/xc8/v3.10/pic/sources/c99/common/sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"15 /opt/microchip/xc8/v3.10/pic/sources/c99/common/Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"15 /opt/microchip/xc8/v3.10/pic/sources/c99/common/Umul24.c
+[v ___tmul __tmul `(um  1 e 3 0 ]
+"15 /opt/microchip/xc8/v3.10/pic/sources/c99/common/Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 /opt/microchip/xc8/v3.10/pic/sources/c99/common/Umul64.c
+[v ___omul __omul `(uo  1 e 8 0 ]
+"5 /home/reyes/embedded/automotive/dio/main.c
+[v _main main `(i  1 e 2 0 ]
+"4 /home/reyes/embedded/automotive/dio/src/dio.c
+[v _Dio_Init Dio_Init `(v  1 e 1 0 ]
+"21
+[v _Dio_ReadChannel Dio_ReadChannel `(E40  1 e 1 0 ]
+"33
+[v _Dio_WriteChannel Dio_WriteChannel `(v  1 e 1 0 ]
+"2451 /opt/microchip/mplabx/v6.25/packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8/pic/include/proc/pic18f4550.h
+[v _PORTB PORTB `VEuc  1 e 1 @3969 ]
+"2561
+[v _PORTC PORTC `VEuc  1 e 1 @3970 ]
+"3071
+[v _LATB LATB `VEuc  1 e 1 @3978 ]
+"3183
+[v _LATC LATC `VEuc  1 e 1 @3979 ]
+"3623
+[v _TRISB TRISB `VEuc  1 e 1 @3987 ]
+"3845
+[v _TRISC TRISC `VEuc  1 e 1 @3988 ]
+[s S62 . 8 `*.39VEuc 1 tris 2 0 `*.39VEuc 1 port 2 2 `*.39VEuc 1 lat 2 4 `uc 1 pinMask 1 6 `E36 1 direction 1 7 ]
+"6 /home/reyes/embedded/automotive/dio/src/dio_cfg.c
+[v _Dio_ChannelConfig Dio_ChannelConfig `C[4]S62  1 e 32 0 ]
+"5 /home/reyes/embedded/automotive/dio/main.c
+[v _main main `(i  1 e 2 0 ]
+{
+"20
+} 0
+"33 /home/reyes/embedded/automotive/dio/src/dio.c
+[v _Dio_WriteChannel Dio_WriteChannel `(v  1 e 1 0 ]
+{
+[v Dio_WriteChannel@channelId channelId `uc  1 p 1 wreg ]
+[v Dio_WriteChannel@channelId channelId `uc  1 p 1 wreg ]
+[v Dio_WriteChannel@level level `E40  1 p 1 0 ]
+"35
+[v Dio_WriteChannel@channelId channelId `uc  1 p 1 8 ]
+"43
+} 1
+"21
+[v _Dio_ReadChannel Dio_ReadChannel `(E40  1 e 1 0 ]
+{
+[v Dio_ReadChannel@channelId channelId `uc  1 p 1 wreg ]
+[v Dio_ReadChannel@channelId channelId `uc  1 p 1 wreg ]
+"23
+[v Dio_ReadChannel@channelId channelId `uc  1 p 1 7 ]
+"31
+} 1
+"4
+[v _Dio_Init Dio_Init `(v  1 e 1 0 ]
+{
+"6
+[v Dio_Init@i i `uc  1 a 1 6 ]
+"19
+} 0

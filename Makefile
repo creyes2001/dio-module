@@ -3,6 +3,7 @@ MDFP ="/opt/microchip/mplabx/v6.25/packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8"
 BUILD_DIR = build
 OBJ_DIR = $(BUILD_DIR)/obj
 BIN_DIR = $(BUILD_DIR)/bin
+INCLUDE_DIR = inc
    
 #===========TOOLACHAIN=====================
 CC = xc8-cc
@@ -23,8 +24,8 @@ OBJECTS = $(patsubst %,$(OBJ_DIR)/%,$(OBJECT_NAMES))
 MCU = 18F4550
 WFLAGS = -WCL4 -Wextra -Werror -Wshadow
 OPT = -O1
-CFLAGS = -mcpu=$(MCU) $(WFLAGS) -mdfp=$(MDFP) $(OPT)
-LDFLAGS = -mcpu=$(MCU) -mdfp=$(MDFP)
+CFLAGS = -mcpu=$(MCU) $(WFLAGS) -mdfp=$(MDFP) $(OPT) -I $(INCLUDE_DIR)
+LDFLAGS = -mcpu=$(MCU) -mdfp=$(MDFP) -I $(INCLUDE_DIR)
     
 #==========FLASH FLAGS==================
 DEVICE = -ppic18f4550

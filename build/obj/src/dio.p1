@@ -1,0 +1,121 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"8 src/dio.c
+[c E57 0 1 2 3 4 .. ]
+[n E57 . DIO_CH_DOOR_SWITCH DIO_CH_COURTESY_LAMP DIO_CH_TURN_SIGNAL_LAMP DIO_CH_HAZARD_LAMP DIO_CH_MAX  ]
+"10
+[c E36 0 1 .. ]
+[n E36 . DIO_OUTPUT DIO_INPUT  ]
+"19 inc/dio.h
+[s S1 `*Vuc 1 `*Vuc 1 `*Vuc 1 `uc 1 `E36 1 ]
+[n S1 . tris port lat pinMask direction ]
+"16 inc/dio_cfg.h
+[v _Dio_ChannelConfig `CS1 ~T0 @X0 -> 0 `x e ]
+"21 src/dio.c
+[c E40 0 1 .. ]
+[n E40 . DIO_LEVEL_LOW DIO_LEVEL_HIGH  ]
+"4 src/dio.c
+[v _Dio_Init `(v ~T0 @X0 1 ef ]
+"5
+{
+[e :U _Dio_Init ]
+[f ]
+"6
+[v _i `uc ~T0 @X0 1 a ]
+"8
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> . `E57 4 `i 3  ]
+[e $U 4  ]
+[e :U 3 ]
+"9
+{
+"10
+[e $ ! == -> . *U + &U _Dio_ChannelConfig * -> _i `ux -> -> # *U &U _Dio_ChannelConfig `ui `ux 4 `ui -> . `E36 1 `ui 6  ]
+"11
+{
+"12
+[e =| *U . *U + &U _Dio_ChannelConfig * -> _i `ux -> -> # *U &U _Dio_ChannelConfig `ui `ux 0 -> . *U + &U _Dio_ChannelConfig * -> _i `ux -> -> # *U &U _Dio_ChannelConfig `ui `ux 3 `uc ]
+"13
+}
+[e $U 7  ]
+"14
+[e :U 6 ]
+"15
+{
+"16
+[e =& *U . *U + &U _Dio_ChannelConfig * -> _i `ux -> -> # *U &U _Dio_ChannelConfig `ui `ux 0 -> ~ -> . *U + &U _Dio_ChannelConfig * -> _i `ux -> -> # *U &U _Dio_ChannelConfig `ui `ux 3 `i `uc ]
+"17
+}
+[e :U 7 ]
+"18
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> . `E57 4 `i 3  ]
+[e :U 4 ]
+}
+"19
+[e :UE 2 ]
+}
+"21
+[v _Dio_ReadChannel `(E40 ~T0 @X0 1 ef1`uc ]
+"22
+{
+[e :U _Dio_ReadChannel ]
+"21
+[v _channelId `uc ~T0 @X0 1 r1 ]
+"22
+[f ]
+"23
+[e $ ! != & -> *U . *U + &U _Dio_ChannelConfig * -> _channelId `ux -> -> # *U &U _Dio_ChannelConfig `ui `ux 1 `i -> . *U + &U _Dio_ChannelConfig * -> _channelId `ux -> -> # *U &U _Dio_ChannelConfig `ui `ux 3 `i -> 0 `i 9  ]
+"24
+{
+"25
+[e ) . `E40 1 ]
+[e $UE 8  ]
+"26
+}
+[e $U 10  ]
+"27
+[e :U 9 ]
+"28
+{
+"29
+[e ) . `E40 0 ]
+[e $UE 8  ]
+"30
+}
+[e :U 10 ]
+"31
+[e :UE 8 ]
+}
+"33
+[v _Dio_WriteChannel `(v ~T0 @X0 1 ef2`uc`E40 ]
+"34
+{
+[e :U _Dio_WriteChannel ]
+"33
+[v _channelId `uc ~T0 @X0 1 r1 ]
+[v _level `E40 ~T0 @X0 1 r2 ]
+"34
+[f ]
+"35
+[e $ ! == -> _level `ui -> . `E40 1 `ui 12  ]
+"36
+{
+"37
+[e =| *U . *U + &U _Dio_ChannelConfig * -> _channelId `ux -> -> # *U &U _Dio_ChannelConfig `ui `ux 2 -> . *U + &U _Dio_ChannelConfig * -> _channelId `ux -> -> # *U &U _Dio_ChannelConfig `ui `ux 3 `uc ]
+"38
+}
+[e $U 13  ]
+"39
+[e :U 12 ]
+"40
+{
+"41
+[e =& *U . *U + &U _Dio_ChannelConfig * -> _channelId `ux -> -> # *U &U _Dio_ChannelConfig `ui `ux 2 -> ~ -> . *U + &U _Dio_ChannelConfig * -> _channelId `ux -> -> # *U &U _Dio_ChannelConfig `ui `ux 3 `i `uc ]
+"42
+}
+[e :U 13 ]
+"43
+[e :UE 11 ]
+}

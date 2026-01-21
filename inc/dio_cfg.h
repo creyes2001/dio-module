@@ -13,7 +13,7 @@ typedef enum
 	DIO_CH_MAX
 }Dio_ChannelType;
 
-extern const Dio_ChannelConfigType Dio_channelConfig[MAX_CH_MAX];
+extern const Dio_ChannelConfigType Dio_ChannelConfig[DIO_CH_MAX];
 
 
 
