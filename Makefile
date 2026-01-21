@@ -12,7 +12,8 @@ RM = rm
 TARGET = $(BIN_DIR)/dio
     
 SOURCES = main.c\
-		  src/dio.c
+		  src/dio.c\
+		  src/dio_cfg.c
            
     
 OBJECT_NAMES = $(SOURCES:.c=.p1)
