@@ -33,6 +33,13 @@ Application Layer
 └── MCU GPIO Registers
 ```
 ---
+
+## Configuration Concept
+
+The DIO module has a compile-time configuration table, that configure all the channels, each entry describes the hardware and direction of a single channel,during initialization the DIO driver goes through this table to configure the hardware accordingly 
+
+---
+
 ## Target Hardware
 
 - **MCU:** PIC18F4550
