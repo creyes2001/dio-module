@@ -7,6 +7,18 @@ It provides a hardware abstraction layer to avoid register access in the applica
 
 ---
 
+## Module Responsabilities
+
+- Initialize I/O channels through configuration tables
+- Read the logical level from input channels
+- Set the logical level to output channels
+- Provide a hardware abstraction layer for digital I/O access
+- Does not contain application logic
+- Does not handle debounce for input channels
+- Does not implement timing or delays
+
+---
+
 ## Target Hardware
 
 - **MCU:** PIC18F4550
