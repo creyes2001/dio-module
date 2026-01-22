@@ -7,7 +7,7 @@ It provides a hardware abstraction layer to avoid register access in the applica
 
 ---
 
-## Module Responsabilities
+## Module Responsibilities
 
 - Initialize I/O channels through configuration tables
 - Read the logical level from input channels
@@ -19,6 +19,20 @@ It provides a hardware abstraction layer to avoid register access in the applica
 
 ---
 
+## Architecture Position
+
+The DIO module abstracts the hardware so upper layers do not need direct access to registers; all GPIO access goes through the DIO driver.
+
+```
+Application Layer
+│
+├── Functional Modules (Button, Lamp)
+│
+├── DIO Driver
+│
+└── MCU GPIO Registers
+```
+---
 ## Target Hardware
 
 - **MCU:** PIC18F4550
