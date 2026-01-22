@@ -40,6 +40,13 @@ The DIO module has a compile-time configuration table, that configure all the ch
 
 ---
 
+## API Overview
+
+- Dio_Init: Initializes all configured digital I/O channels
+- Dio_ReadChannel: Reads the logical state of an input channel
+- Dio_WriteChannel: Sets the logical state of an output channel
+
+
 ## Target Hardware
 
 - **MCU:** PIC18F4550
