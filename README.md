@@ -46,6 +46,16 @@ The DIO module has a compile-time configuration table, that configure all the ch
 - Dio_ReadChannel: Reads the logical state of an input channel
 - Dio_WriteChannel: Sets the logical state of an output channel
 
+---
+
+## Error Handling and Assumptions
+
+- Assumes the configuration table is correctly defined at compile time
+- Assumes valid channel identifiers are provided by the caller
+- Does not perform runtime parameter validation
+- Does not report errors via return values
+
+---
 
 ## Target Hardware
 
